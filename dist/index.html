@@ -28,7 +28,7 @@
       if (url && url.length > 1) {
         url = url[1];
       } else {
-        url = "http://petstore.swagger.wordnik.com/v2/swagger.json";
+        url = "http://localhost:3000/v1/swagger_doc"
       }
       window.swaggerUi = new SwaggerUi({
         url: url,
@@ -61,7 +61,7 @@
         log("key: " + key);
         if(key && key.trim() != "") {
             log("added key " + key);
-            window.authorizations.add("api_key", new ApiKeyAuthorization("api_key", key, "query"));
+            window.authorizations.add("api_key", new ApiKeyAuthorization("X-ApiTokenId", key, "header"));
         }
       }
 

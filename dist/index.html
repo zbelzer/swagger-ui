@@ -52,7 +52,11 @@
         }
       }
 
-      $('#input_apiKey').change(function() {
+      $('#input_apiKey').on('change', function() {
+        addApiKeyAuthorization();
+      });
+
+      $('#api_selector').on('submit', function() {
         addApiKeyAuthorization();
       });
 
@@ -106,7 +110,7 @@
     <a id="logo" href="http://swagger.io">swagger</a>
     <form id='api_selector'>
       <div class='input'><input placeholder="http://example.com/api" id="input_baseUrl" name="baseUrl" type="text"/></div>
-      <div class='input'><input placeholder="api_key" id="input_apiKey" name="apiKey" type="text"/></div>
+      <div class='input'><input placeholder="api_token_id" id="input_apiKey" name="apiKey" type="text"/></div>
       <div class='input'><a id="explore" href="#">Explore</a></div>
     </form>
   </div>
